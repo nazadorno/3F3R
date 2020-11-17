@@ -28,6 +28,27 @@ namespace _3F3R.Controllers
             return View();
         }
 
+        public IActionResult Puestos()
+        {
+            return View();
+        }
+
+        public IActionResult Materiales()
+        {
+            return View();
+        }
+
+        public IActionResult Preguntas()
+        {
+            return View();
+        }
+
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

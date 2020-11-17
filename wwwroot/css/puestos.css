@@ -1,0 +1,29 @@
+body {    
+    font-family: 'Crimson Text', serif;
+}
+
+.container {
+  padding: 40px 80px;
+}
+
+.jumbotron {
+  background-color: #c1ecdec5;
+  color: #000000;
+}
+
+.atencion {
+  background-color: rgba(250, 132, 64, 0.5);
+  margin: 30px;
+}    
+
+.imagenpuestos {
+  max-width:100%;
+  height:auto;
+  margin-bottom: 30px;
+}
+
+#horarios {
+  border-style: groove;
+}
+
+

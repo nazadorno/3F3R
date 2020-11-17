@@ -1,0 +1,36 @@
+body {    
+  font-family: 'Crimson Text', serif;
+}
+
+.container {
+  padding: 40px 80px;
+}
+
+.jumbotron {
+  background-color: #c1ecdec5;
+  color: #000000;
+}
+
+.thumbnail {
+  padding: 15px;
+  border: none;
+  border-radius: 0;
+}
+  
+.thumbnail img {
+  width: 100%;
+  height: 40%;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  border-radius: 10%;
+}
+
+.nav-link {
+  color: #000000;
+  background-color: rgba(255, 228, 196, 0.733);
+}
+
+.nav-link:hover {
+  color: #000000;
+  background-color: #9e9a9a;
+}
