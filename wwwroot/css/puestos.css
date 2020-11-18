@@ -2,7 +2,7 @@ body {
     font-family: 'Crimson Text', serif;
 }
 
-.container {
+.container puestos {
   padding: 40px 80px;
 }
 
@@ -20,6 +20,7 @@ body {
   max-width:100%;
   height:auto;
   margin-bottom: 30px;
+  border-radius: 10%;
 }
 
 #horarios {

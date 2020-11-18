@@ -6,6 +6,7 @@
     <title>@ViewData["Title"]3F3R</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
@@ -38,7 +39,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="cuerpo">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

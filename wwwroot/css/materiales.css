@@ -2,7 +2,7 @@ body {
   font-family: 'Crimson Text', serif;
 }
 
-.container {
+.container materiales {
   padding: 40px 80px;
 }
 
@@ -25,12 +25,17 @@ body {
   border-radius: 10%;
 }
 
-.nav-link {
+.col-sm-3 .nav-link {
   color: #000000;
-  background-color: rgba(255, 228, 196, 0.733);
+  background-color: rgba(238, 200, 153, 0.733);
 }
 
-.nav-link:hover {
+.col-sm-3 .nav-link:hover {
   color: #000000;
   background-color: #9e9a9a;
+}
+
+.col-sm-3 .nav-link:active {
+  color: #000000;
+  background-color: #818181;
 }
