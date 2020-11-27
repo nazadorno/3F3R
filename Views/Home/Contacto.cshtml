@@ -1,0 +1,19 @@
+<p>Formulario de Contacto</p>
+
+<form method="POST" action="@Url.Action("EnviarContacto", "Home")">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" type="text" class="form-control form-control-lg" name="para" id="nombre" placeholder="Ingresa tu nombre" required>
+    </div>
+
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input name="mail" type="email" class="form-control" id="mail" placeholder="name@example.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="consulta">Ingresá tu Consulta</label>
+        <textarea name="consulta" class="form-control" id="consulta" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark">Enviar</button>
+</form>
