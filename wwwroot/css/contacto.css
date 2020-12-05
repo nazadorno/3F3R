@@ -1,0 +1,26 @@
+body {    
+  font-family: 'Crimson Text', serif;
+  background-image: url("../img/recycling.jpg");
+  background-size: cover; 
+}
+  
+.container transbox {  
+  padding: 40px 80px;  
+}
+  
+.jumbotron {
+  background-color: #77b300;
+  color: #000000;
+}
+  
+.transbox {
+  background-color: #fffffffa;
+  opacity: 0.8;
+}
+  
+.transbox p {
+  font-weight: bold;
+  color: #000000;
+}
+  
+  

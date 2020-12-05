@@ -1,19 +1,41 @@
-<p>Formulario de Contacto</p>
+@section Styles{
+  <link rel="stylesheet" href="~/css/contacto.css" />
+}
 
-<form method="POST" action="@Url.Action("EnviarContacto", "Home")">
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input name="nombre" type="text" class="form-control form-control-lg" name="para" id="nombre" placeholder="Ingresa tu nombre" required>
+<div class="jumbotron text-center">
+      <h1>CONTACTO</h1>
+      <p>DEJANOS TUS DATOS PARA COORDINAR UNA ACTIVIDAD DE CONCIENTIZACIÓN</p>
     </div>
+  
+    <div class="container transbox"> 
+      
+      <form method="POST" action="@Url.Action("EnviarContacto", "Home")">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input name="nombre" type="text" class="form-control form-control-lg" name="para" id="nombre" placeholder="Ingresá tu nombre..." required>
+        </div>
+    
+        <div class="form-group">
+            <label for="mail">Mail</label>
+            <input name="mail" type="email" class="form-control" id="mail" placeholder="mail@ejemplo.com" required>
+        </div>
 
-    <div class="form-group">
-        <label for="mail">Mail</label>
-        <input name="mail" type="email" class="form-control" id="mail" placeholder="name@example.com" required>
-    </div>
+        <div class="form-group">
+          <label for="establecimiento">Establecimiento</label>
+          <input name="establecimiento" type="text" class="form-control" id="establecimiento" required>
+        </div>
 
-    <div class="form-group">
-        <label for="consulta">Ingresá tu Consulta</label>
-        <textarea name="consulta" class="form-control" id="consulta" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-dark">Enviar</button>
-</form>
+        <div class="form-group">
+          <label for="curso">Curso / Año</label>
+          <input name="curso" type="text" class="form-control" id="curso" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="consulta">Comentario:</label>
+            <textarea name="consulta" class="form-control" id="consulta" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Enviar</button>
+     </form>    
+
+    
+    </div>   

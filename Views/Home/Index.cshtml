@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="~/css/index.css" />
 }
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="img/1.jpg" class="d-block w-100" alt="...">
@@ -25,21 +25,24 @@
     </div>
 
     <div class="jumbotron jumbotron-fluid text-center">
-        <h1>3F3R</h1>
-        <h3>UNA PROPUESTA SOBRE NUESTROS HÁBITOS DE CONSUMO</h3>
+      <h1>3F3R</h1>
+      <h5>UNA PROPUESTA SOBRE NUESTROS HÁBITOS DE CONSUMO</h5>
     </div>
 
     <div class="container index text-center">     
       <div class="row">
         <div class="col-sm-4">
+          <a href="@Url.Action("Reducir","Home")" />
           <p><strong>REDUCIR</strong></p>
           <img src="img/reducir.jpg" class="rounded-circle person"  alt="Random Name" width="255" height="255">
         </div>
         <div class="col-sm-4">
+          <a href="@Url.Action("Reutilizar","Home")" />
           <p><strong>REUTILIZAR</strong></p>
           <img src="img/reutilizar.jpg" class="rounded-circle person"  alt="Random Name" width="255" height="255">
         </div>
         <div class="col-sm-4">
+          <a href="@Url.Action("Reciclar","Home")" />
           <p><strong>RECICLAR</strong></p>
           <img src="img/reciclar.jpg" class="rounded-circle person"  alt="Random Name" width="255" height="255">
         </div>

@@ -50,6 +50,21 @@ namespace _3F3R.Controllers
             return View();
         }
 
+        public IActionResult Reducir()
+        {
+            return View();
+        }
+
+        public IActionResult Reutilizar()
+        {
+            return View();
+        }
+
+        public IActionResult Reciclar()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -59,14 +74,10 @@ namespace _3F3R.Controllers
 
 
         [HttpPost]
-        public IActionResult EnviarContacto(string nombre, string mail, string consulta) {
+        public IActionResult EnviarContacto(string nombre, string mail, string establecimiento, string curso, string consulta) {
 
             try
                 {
-                    MailMessage correo= new MailMessage();
-                    correo.From=new MailAddress("contacto3f3r@gmail.com");
-                    correo.IsBodyHtml= true;
-                    correo.Priority= MailPriority.Normal;
                     SmtpClient smtp= new SmtpClient();
                     smtp.Host= "smtp.gmail.com";
                     smtp.Port=25;
@@ -75,8 +86,12 @@ namespace _3F3R.Controllers
                     string scuentaCorreo="contacto3f3r@gmail.com";
                     string sPasswordCorreo="proyectocomit2020";
                     smtp.Credentials= new System.Net.NetworkCredential(scuentaCorreo,sPasswordCorreo);
-                    smtp.Send(scuentaCorreo, scuentaCorreo, $"Consulta de {nombre}", $"{consulta}");
-                    smtp.Send(scuentaCorreo, mail, $"Consulta de {nombre}", $"{consulta}");
+                    MailMessage correo= new MailMessage();
+                    correo.From=new MailAddress("contacto3f3r@gmail.com");
+                    correo.IsBodyHtml= true;
+                    correo.Priority= MailPriority.Normal;
+                    smtp.Send(scuentaCorreo, scuentaCorreo, $"Consulta de {nombre}", $"{establecimiento} {curso} {consulta}");
+                    smtp.Send(scuentaCorreo, mail, $"{nombre}, gracias por contactarte!", $"Nos comunicaremos a la brevedad.");
                     
                     ViewBag.Mensaje= "Mensaje enviado correctamente";
 
