@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using _3F3R.Models;
 
 namespace _3F3R
 {
@@ -24,6 +26,8 @@ namespace _3F3R
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<_3F3RContext>(options => 
+                options.UseSqlite(Configuration.GetConnectionString("_3F3RContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
