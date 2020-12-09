@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Editar";
+}
+
+     <div class="text-center">
+        <h1 class="display-4">Puestos de reciclado 3F</h1>
+
+          <table>
+            <thead>   
+                <tr> 
+                  <th>CP</th> 
+                  <th>Latitud</th> 
+                  <th>Longitud</th>
+                  <th>Plaza</th>
+                  <th>Horarios</th>              
+                </tr> 
+            </thead> 
+            @foreach(var puesto in ViewBag.verPuestos) 
+              {    
+                <tr>  
+                  <td>@puesto.CP</td> 
+                  <td>@puesto.Latitud</td>
+                  <td>@puesto.Longitud</td> 
+                  <td>@puesto.Plaza</td> 
+                  <td>@puesto.Horarios</td>  
+                </tr>   
+              }
+          </table> 
+      </div>

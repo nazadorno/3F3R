@@ -31,8 +31,13 @@ namespace _3F3R.Migrations
                     b.Property<string>("Horarios")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Latitud")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Longitud")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("Plaza")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("CP");
@@ -46,32 +51,41 @@ namespace _3F3R.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Altura")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("CP")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Calle")
                         .HasColumnType("TEXT");
 
+                    b.Property<double>("Latitud")
+                        .HasColumnType("REAL");
+
                     b.Property<string>("Localidad")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PuestoCP")
+                    b.Property<double>("Longitud")
+                        .HasColumnType("REAL");
+
+                    b.Property<int?>("PuestoCercanoCP")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("PuestoCP");
+                    b.HasIndex("PuestoCercanoCP");
 
                     b.ToTable("Zonas");
                 });
 
             modelBuilder.Entity("_3F3R.Models.Zona", b =>
                 {
-                    b.HasOne("_3F3R.Models.Puesto", "Puesto")
+                    b.HasOne("_3F3R.Models.Puesto", "PuestoCercano")
                         .WithMany()
-                        .HasForeignKey("PuestoCP");
+                        .HasForeignKey("PuestoCercanoCP");
 
-                    b.Navigation("Puesto");
+                    b.Navigation("PuestoCercano");
                 });
 #pragma warning restore 612, 618
         }

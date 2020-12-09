@@ -13,11 +13,14 @@ namespace _3F3R.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly _3F3RContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+        _3F3RContext contexto)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.db = contexto;
         }
 
         public IActionResult Index()
@@ -31,7 +34,7 @@ namespace _3F3R.Controllers
         }
 
         public IActionResult Puestos()
-        {
+        {   
             return View();
         }
 
