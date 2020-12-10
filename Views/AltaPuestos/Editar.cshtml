@@ -2,28 +2,82 @@
     ViewData["Title"] = "Editar";
 }
 
-     <div class="text-center">
-        <h1 class="display-4">Puestos de reciclado 3F</h1>
+<div class="text-center">
+  <h1 class="display-4">Puestos de reciclado 3F</h1>
+  <table>
+    <thead>   
+      <tr> 
+        <th>CP</th> 
+        <th>Latitud</th> 
+        <th>Longitud</th>
+        <th>Plaza</th>
+        <th>Horarios</th>              
+      </tr> 
+    </thead> 
+    @foreach(var puesto in ViewBag.verPuestos) 
+      {    
+        <tr>  
+          <td>@puesto.CP</td> 
+          <td>@puesto.Latitud</td>
+          <td>@puesto.Longitud</td> 
+          <td>@puesto.Plaza</td> 
+          <td>@puesto.Horarios</td>  
+        </tr>   
+      }
+  </table> 
+</div>
 
-          <table>
-            <thead>   
-                <tr> 
-                  <th>CP</th> 
-                  <th>Latitud</th> 
-                  <th>Longitud</th>
-                  <th>Plaza</th>
-                  <th>Horarios</th>              
-                </tr> 
-            </thead> 
-            @foreach(var puesto in ViewBag.verPuestos) 
-              {    
-                <tr>  
-                  <td>@puesto.CP</td> 
-                  <td>@puesto.Latitud</td>
-                  <td>@puesto.Longitud</td> 
-                  <td>@puesto.Plaza</td> 
-                  <td>@puesto.Horarios</td>  
-                </tr>   
-              }
-          </table> 
-      </div>
+<h2>Agregar nuevo puesto</h2>
+
+
+<form method="POST" action="@Url.Action("Agregar", "AltaPuestos")">
+  <div class="form-group">
+    <label for="titulo">CP</label>
+    <input type="text" class="form-control" name="cp">
+    <label for="titulo">Latitud</label>
+    <input type="text" class="form-control" name="latitud">
+    <label for="titulo">Longitud</label>
+    <input type="text" class="form-control" name="longitud">
+    <label for="titulo">Plaza</label>
+    <input type="text" class="form-control" name="plaza">
+    <label for="titulo">Horarios</label>
+    <input type="text" class="form-control" name="horarios">
+  </div>
+          
+  <button type="submit" class="btn btn-dark">Guardar</button>
+</form>
+
+<h2>Editar</h2>
+
+<form method="POST" action="@Url.Action("DoEdit", "AltaPuestos")">
+  <div class="form-group">
+    <label for="titulo">CP</label>
+    <input type="text" class="form-control" name="cp">
+    <label for="titulo">Latitud</label>
+    <input type="text" class="form-control" name="latitud">
+    <label for="titulo">Longitud</label>
+    <input type="text" class="form-control" name="longitud">
+    <label for="titulo">Plaza</label>
+    <input type="text" class="form-control" name="plaza">
+    <label for="titulo">Horarios</label>
+    <input type="text" class="form-control" name="horarios">
+  </div>
+          
+  <button type="submit" class="btn btn-dark">Editar</button>
+</form>
+
+<h2>Eliminar ubicación</h2>
+
+<form method="POST" action="@Url.Action("Eliminar", "AltaPuestos")">
+  <div class="form-group">
+    <label for="titulo">CP</label>
+    <input type="text" class="form-control" name="cp">
+  </div>
+          
+  <button type="submit" class="btn btn-dark">Eliminar</button>
+</form>
+
+
+
+
+

@@ -23,16 +23,53 @@ namespace AltaPuestos.Controllers
             this.db = contexto;
         }
 
-         public IActionResult Editar()
+        public JsonResult ConsultarPuestos()
+        {
+            return Json(db.Puestos.ToList());
+        }
+
+        public IActionResult Editar()
         {
             ViewBag.verPuestos = db.Puestos.ToList();            
             return View();
         }
 
-        public JsonResult ConsultarPuestos()
+        [HttpPost]
+        public IActionResult Agregar(int cp, double latitud, double longitud, string plaza, string horarios)
         {
-            return Json(db.Puestos.ToList());
-        }       
+            Puesto nuevoPuesto = new Puesto{
+                CP = cp,
+                Latitud = latitud,
+                Longitud = longitud,
+                Plaza = plaza,
+                Horarios = horarios,              
+            };
+
+            db.Puestos.Add(nuevoPuesto);
+            db.SaveChanges();
+            return RedirectToAction("Editar", "AltaPuestos");
+        }    
+
+        public IActionResult Actualizar(int CP)
+        {
+            Puesto puesto = db.Puestos.FirstOrDefault(n => n.CP == CP);
+            return View(puesto);
+        }
+
+        [HttpPost]
+        public IActionResult DoEdit(int CP, double latitud, double longitud, string plaza, string horarios)
+        {
+            Puesto puesto = db.Puestos.FirstOrDefault(n => n.CP == CP);
+            puesto.Latitud = latitud;
+            puesto.Longitud = longitud;
+            puesto.Plaza = plaza;
+            puesto.Horarios = horarios;
+
+            db.Puestos.Update(puesto);
+            db.SaveChanges();
+
+            return RedirectToAction("Editar", "AltaPuestos");
+        }
 
         public IActionResult Eliminar(int CP)
         {
@@ -41,7 +78,7 @@ namespace AltaPuestos.Controllers
             db.Puestos.Remove(puesto);
             db.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Editar", "AltaPuestos");
         }
     }   
 }   
