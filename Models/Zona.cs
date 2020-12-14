@@ -13,7 +13,6 @@ namespace _3F3R.Models
         public double Latitud { get; set; }
         [Required]
         public double Longitud { get; set; }
-        public int CP { get; set; }       
         public string Localidad { get; set; }
         public string Calle { get; set; }    
         public int Altura { get; set; }    

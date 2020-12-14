@@ -4,6 +4,7 @@
 
 @section Styles{
   <link rel="stylesheet" href="~/css/leaflet.css" />
+  <link rel="stylesheet" href="~/css/editar.css" />
 }
 
 <div class="text-center">
@@ -14,8 +15,9 @@
         <th>CP</th> 
         <th>Latitud</th> 
         <th>Longitud</th>
+        <th>Localidad</th>
         <th>Plaza</th>
-        <th>Horarios</th>              
+        <th>Direccion</th>              
       </tr> 
     </thead> 
     @foreach(var puesto in ViewBag.verPuestos) 
@@ -23,15 +25,16 @@
         <tr>  
           <td>@puesto.CP</td> 
           <td>@puesto.Latitud</td>
-          <td>@puesto.Longitud</td> 
+          <td>@puesto.Longitud</td>
           <td>@puesto.Plaza</td> 
+          <td>@puesto.Calle</td>
           <td>@puesto.Horarios</td>  
         </tr>   
       }
   </table> 
 </div>
 
-<div id="myMap" style="height: 300px"></div>
+<div id="myMap"></div>
 
 <h2>Agregar ubicación</h2>
 
@@ -39,15 +42,11 @@
 <form method="POST" action="@Url.Action("Agregar", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp" maxlength ="10">
+    <input type="text" class="form-control" name="cp">
     <label for="titulo">Latitud</label>
-    <input type="text" class="form-control" name="latitud" maxlength ="10">
+    <input type="text" class="form-control" name="latitud">
     <label for="titulo">Longitud</label>
-    <input type="text" class="form-control" name="longitud" maxlength ="10">
-    <label for="titulo">Plaza</label>
-    <input type="text" class="form-control" name="plaza" maxlength ="10">
-    <label for="titulo">Horarios</label>
-    <input type="text" class="form-control" name="horarios" maxlength ="30">
+    <input type="text" class="form-control" name="longitud">
   </div>
           
   <button type="submit" class="btn btn-dark">Guardar</button>
@@ -58,15 +57,11 @@
 <form method="POST" action="@Url.Action("DoEdit", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp" maxlength ="10">
+    <input type="text" class="form-control" name="cp">
     <label for="titulo">Latitud</label>
-    <input type="text" class="form-control" name="latitud" maxlength ="10">
+    <input type="text" class="form-control" name="latitud">
     <label for="titulo">Longitud</label>
-    <input type="text" class="form-control" name="longitud" maxlength ="10">
-    <label for="titulo">Plaza</label>
-    <input type="text" class="form-control" name="plaza" maxlength ="10">
-    <label for="titulo">Horarios</label>
-    <input type="text" class="form-control" name="horarios"maxlength ="30">
+    <input type="text" class="form-control" name="longitud">
   </div>
           
   <button type="submit" class="btn btn-dark">Editar</button>
@@ -77,7 +72,7 @@
 <form method="POST" action="@Url.Action("Eliminar", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp" maxlength ="10">
+    <input type="text" class="form-control" name="cp">
   </div>
           
   <button type="submit" class="btn btn-dark">Eliminar</button>

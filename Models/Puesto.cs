@@ -16,6 +16,5 @@ namespace _3F3R.Models
         public string Calle { get; set; }
         public int Altura { get; set; }
         public string Horarios { get; set; }
-
     }
 }

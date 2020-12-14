@@ -1,5 +1,5 @@
 body {    
-    font-family: 'Crimson Text', serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .container puestos {
@@ -12,19 +12,19 @@ body {
 }
 
 .atencion {
-  background-color: rgba(250, 132, 64, 0.5);
+  text-align: center;
+  background-color: rgba(241, 42, 16, 0.692);
   margin: 30px;
 }    
 
-.imagenpuestos {
-  max-width:100%;
-  height:auto;
-  margin-bottom: 30px;
-  border-radius: 10%;
+#horarios {
+  border-style: none;
+  text-align: center;
 }
 
-#horarios {
-  border-style: groove;
+#myMap {
+  height: 600px;
+  width: 100%;
 }
 
 

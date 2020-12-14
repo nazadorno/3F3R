@@ -33,11 +33,6 @@ namespace _3F3R.Controllers
             return View();
         }
 
-        public IActionResult Puestos()
-        {   
-            return View();
-        }
-
         public IActionResult Materiales()
         {
             return View();
@@ -68,13 +63,17 @@ namespace _3F3R.Controllers
             return View();
         }
 
+        public IActionResult Puestos()
+        {   
+            ViewBag.verPuestos = db.Puestos.ToList(); 
+            return View();
+        }        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
 
         [HttpPost]
         public IActionResult EnviarContacto(string nombre, string mail, string establecimiento, string curso, string consulta) {

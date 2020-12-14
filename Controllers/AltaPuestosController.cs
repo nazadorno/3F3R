@@ -35,13 +35,15 @@ namespace AltaPuestos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Agregar(int cp, double latitud, double longitud, string plaza, string horarios)
+        public IActionResult Agregar(int cp, double latitud, double longitud, string plaza, 
+        string calle, string horarios)
         {
             Puesto nuevoPuesto = new Puesto{
                 CP = cp,
                 Latitud = latitud,
                 Longitud = longitud,
                 Plaza = plaza,
+                Calle = calle,
                 Horarios = horarios,              
             };
 
@@ -57,13 +59,11 @@ namespace AltaPuestos.Controllers
         }
 
         [HttpPost]
-        public IActionResult DoEdit(int CP, double latitud, double longitud, string plaza, string horarios)
+        public IActionResult DoEdit(int CP, double latitud, double longitud)
         {
             Puesto puesto = db.Puestos.FirstOrDefault(n => n.CP == CP);
             puesto.Latitud = latitud;
             puesto.Longitud = longitud;
-            puesto.Plaza = plaza;
-            puesto.Horarios = horarios;
 
             db.Puestos.Update(puesto);
             db.SaveChanges();
