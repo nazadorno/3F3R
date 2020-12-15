@@ -25,26 +25,7 @@
         <h4>Miércoles a domingo de 11 a 15 hs.</h4>
         <h5>Al lado de cada puesto encontrarás una campana contenedora, 
         adentro podés dejar tus residuos reciclables en bolsas chicas o sueltos,
-        durante las 24 hs.</h5><br>
-
-       <div>
-         <table>
-           <thead>   
-             <tr> 
-               <th>Localidad</th>
-               <th>Plaza</th>              
-             </tr> 
-            </thead> 
-            @foreach(var puesto in ViewBag.verPuestos) 
-            {    
-              <tr id = "punto">  
-                <td >@puesto.Plaza</td> 
-                <td>@puesto.Calle</td> 
-             </tr>   
-            }
-          </table>
-        </div>
-       
+        durante las 24 hs.</h5><br>       
         
       </div>            
    </div>
@@ -56,7 +37,8 @@
     <div class="col-sm-12 col-md-12">
      <div class="thumbnail">
        <h4 class="atencion">¡POR FAVOR NO DEJAR BOLSAS FUERA DEL HORARIO DE ATENCIÓN!<br> 
-       Se pueden romper, los materiales pierden su valor y se ensucian las plazas.</h4>
+       Al quedar a la intemperie se pueden romper, los materiales se dispersan y se contaminan,
+       perdiendo su potencial para ser reciclados y ensuciando las plazas.</h4>
       </div>
     </div>
   </div>

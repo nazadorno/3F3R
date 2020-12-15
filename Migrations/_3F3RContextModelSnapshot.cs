@@ -22,17 +22,14 @@ namespace _3F3R.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Altura")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Calle")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Horarios")
+                    b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Latitud")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Localidad")
+                        .HasColumnType("TEXT");
 
                     b.Property<double>("Longitud")
                         .HasColumnType("REAL");
@@ -45,28 +42,27 @@ namespace _3F3R.Migrations
                     b.ToTable("Puestos");
                 });
 
+            modelBuilder.Entity("_3F3R.Models.Usuario", b =>
+                {
+                    b.Property<string>("Mail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Mail");
+
+                    b.ToTable("Usuarios");
+                });
+
             modelBuilder.Entity("_3F3R.Models.Zona", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Altura")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CP")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Calle")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Latitud")
-                        .HasColumnType("REAL");
-
-                    b.Property<string>("Localidad")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("Longitud")
+                    b.Property<double>("Coordenadas")
                         .HasColumnType("REAL");
 
                     b.Property<int?>("PuestoCercanoCP")

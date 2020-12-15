@@ -14,14 +14,25 @@ namespace _3F3R.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Latitud = table.Column<double>(type: "REAL", nullable: false),
                     Longitud = table.Column<double>(type: "REAL", nullable: false),
+                    Localidad = table.Column<string>(type: "TEXT", nullable: true),
                     Plaza = table.Column<string>(type: "TEXT", nullable: true),
-                    Calle = table.Column<string>(type: "TEXT", nullable: true),
-                    Altura = table.Column<int>(type: "INTEGER", nullable: false),
-                    Horarios = table.Column<string>(type: "TEXT", nullable: true)
+                    Direccion = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Puestos", x => x.CP);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    Mail = table.Column<string>(type: "TEXT", nullable: false),
+                    Nombre = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.Mail);
                 });
 
             migrationBuilder.CreateTable(
@@ -30,12 +41,7 @@ namespace _3F3R.Migrations
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Latitud = table.Column<double>(type: "REAL", nullable: false),
-                    Longitud = table.Column<double>(type: "REAL", nullable: false),
-                    CP = table.Column<int>(type: "INTEGER", nullable: false),
-                    Localidad = table.Column<string>(type: "TEXT", nullable: true),
-                    Calle = table.Column<string>(type: "TEXT", nullable: true),
-                    Altura = table.Column<int>(type: "INTEGER", nullable: false),
+                    Coordenadas = table.Column<double>(type: "REAL", nullable: false),
                     PuestoCercanoCP = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -57,6 +63,9 @@ namespace _3F3R.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Usuarios");
+
             migrationBuilder.DropTable(
                 name: "Zonas");
 

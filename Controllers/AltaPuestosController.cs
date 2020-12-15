@@ -35,16 +35,12 @@ namespace AltaPuestos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Agregar(int cp, double latitud, double longitud, string plaza, 
-        string calle, string horarios)
+        public IActionResult Agregar(int cp, double latitud, double longitud)
         {
             Puesto nuevoPuesto = new Puesto{
                 CP = cp,
                 Latitud = latitud,
-                Longitud = longitud,
-                Plaza = plaza,
-                Calle = calle,
-                Horarios = horarios,              
+                Longitud = longitud,     
             };
 
             db.Puestos.Add(nuevoPuesto);

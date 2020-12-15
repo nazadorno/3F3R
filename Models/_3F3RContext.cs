@@ -12,5 +12,7 @@ namespace _3F3R.Models
 
         public DbSet<Puesto> Puestos { get; set; }
         public DbSet<Zona> Zonas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+
     }
 }

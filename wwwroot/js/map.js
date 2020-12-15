@@ -28,8 +28,8 @@ $(document).ready(function(){
 
         success: function(response) {
             for (var i=0 ; i<response.length ; i++) {
-              L.marker([response[i].latitud, response[i].longitud]).bindPopup('<h4>' + response[i].plaza + '</h4>' +
-              '<h5>' + response[i].calle + '</h5>' + '<p>' + response[i].horarios + '</p>').addTo(myMap);
+              L.marker([response[i].latitud, response[i].longitud]).bindPopup('<h4>' + response[i].localidad + '</h4>' +
+              '<h5>' + response[i].plaza + '</h5>' + '<p>' + response[i].direccion + '</p>').addTo(myMap);
             }       
         },
         
