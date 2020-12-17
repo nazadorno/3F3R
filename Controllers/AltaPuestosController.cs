@@ -40,7 +40,7 @@ namespace AltaPuestos.Controllers
             Puesto nuevoPuesto = new Puesto{
                 CP = cp,
                 Latitud = latitud,
-                Longitud = longitud,     
+                Longitud = longitud     
             };
 
             db.Puestos.Add(nuevoPuesto);
@@ -75,6 +75,24 @@ namespace AltaPuestos.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Editar", "AltaPuestos");
+        }
+
+        public JsonResult ZonaConsultada(double latitud, double longitud)
+        {
+            Zona nuevaZona = new Zona{
+                Latitud = latitud,
+                Longitud = longitud
+            };
+
+            db.Zonas.Add(nuevaZona);
+            db.SaveChanges();
+            return Json(nuevaZona);     
+            
+        }
+
+        public JsonResult VerZonas()
+        {
+            return Json(db.Zonas.ToList());
         }
     }   
 }   

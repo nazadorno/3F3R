@@ -9,7 +9,7 @@ using _3F3R.Models;
 namespace _3F3R.Migrations
 {
     [DbContext(typeof(_3F3RContext))]
-    [Migration("20201215060134_CreacionInicial")]
+    [Migration("20201217001259_CreacionInicial")]
     partial class CreacionInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,7 +64,10 @@ namespace _3F3R.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Coordenadas")
+                    b.Property<double>("Latitud")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Longitud")
                         .HasColumnType("REAL");
 
                     b.Property<int?>("PuestoCercanoCP")

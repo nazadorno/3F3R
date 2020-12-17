@@ -41,7 +41,8 @@ namespace _3F3R.Migrations
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Coordenadas = table.Column<double>(type: "REAL", nullable: false),
+                    Latitud = table.Column<double>(type: "REAL", nullable: false),
+                    Longitud = table.Column<double>(type: "REAL", nullable: false),
                     PuestoCercanoCP = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>

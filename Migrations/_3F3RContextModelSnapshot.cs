@@ -62,7 +62,10 @@ namespace _3F3R.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<double>("Coordenadas")
+                    b.Property<double>("Latitud")
+                        .HasColumnType("REAL");
+
+                    b.Property<double>("Longitud")
                         .HasColumnType("REAL");
 
                     b.Property<int?>("PuestoCercanoCP")

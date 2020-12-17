@@ -9,19 +9,19 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #44515f;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #465768;
+  border-color: #3c434b;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: rgb(90, 88, 88);
+  background-color: #969696c4;
+  border-color: #999999;
 }
 
 /* Sticky footer styles
