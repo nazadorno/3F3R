@@ -12,24 +12,27 @@ body {
   background-size: cover;
 }
 
-.jumbotron img {
-  opacity: 0.5;
-}
 
 .atencion {
   text-align: center;
-  background-color: rgba(241, 42, 16, 0.692);
   margin: 30px;
+  border-style: solid;
+  border-color: lawngreen;
 }    
 
 #horarios {
-  border-style: none;
   text-align: center;
+  padding-top: 30px;
 }
 
 #myMap {
   height: 600px;
   width: 100%;
+}
+
+.imgpuestos {
+  width: 100%;
+  border-radius: 10%;
 }
 
 

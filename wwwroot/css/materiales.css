@@ -22,21 +22,18 @@ body {
   width: 100%;
   height: 40%;
   margin-bottom: 10px;
-  opacity: 0.5;
+  opacity: 0.8;
   border-radius: 10%;
 }
 
-.col-sm-3 .nav-link {
-  color: #000000;
-  background-color: rgba(238, 200, 153, 0.733);
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #5d5e5f;;
 }
 
-.col-sm-3 .nav-link:hover {
-  color: #000000;
-  background-color: #9e9a9a;
-}
+a {
+  color: #155724;
+  text-decoration: none;
+  background-color: transparent;
+}  
 
-.col-sm-3 .nav-link:active {
-  color: #000000;
-  background-color: #818181;
-}

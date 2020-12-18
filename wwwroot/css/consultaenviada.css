@@ -5,3 +5,14 @@ body {
 .container cenv {
   padding: 40px 80px;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #343a40;
+}
+
+.card {
+  margin-left: 400px;
+  text-align: center;
+}
