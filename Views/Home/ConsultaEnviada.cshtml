@@ -1,14 +1,18 @@
-<p>
-    Gracias @ViewBag.Nombre por contactarte con nosotros.
-    Nos llego la siguiente consulta @ViewBag.Consulta 
-    La respuesta será enviada al siguiente mail @ViewBag.Mail
+@section Styles{
+  <link rel="stylesheet" href="~/css/consultaenviada.css" />
+}
 
-    <h3 style="color:blue">
-        @ViewBag.Mensaje
-        </h3>
+<div class ="container cenv">
 
-         <h3 style="color:blue">
-        @ViewBag.Error
-        </h3>
+  <div class="card" style="width: 18rem;">
+      <img src="~/img/logo.jpg" class="card-img-top" alt="logo">
+        <div class="card-body">
+          <h5 class="card-title">¡Gracias @ViewBag.Nombre por contactarte con nosotros!</h5>
+          <p class="card-text">Nos estaremos comunicando a a la siguiente dirección de mail: @ViewBag.mail.</p>
+          <a href="@Url.Action("Index","Home")" class="btn btn-primary">Volver a Inicio</a>
+        </div>
+    </div>
 
-</p>
+</div>
+
+

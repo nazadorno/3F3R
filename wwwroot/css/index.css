@@ -8,8 +8,10 @@ body {
 } 
 
 .jumbotron {
-  background-color: #77b300;
-  color: #e2dfdf;
+  /*background-color: #f5fc9d;*/
+  color: #ffffff;
+  background-image: url("../img/1.jpg");
+  background-size: cover;
 }
   
 .person {

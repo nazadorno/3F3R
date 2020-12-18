@@ -7,8 +7,9 @@ body {
 }
 
 .jumbotron {
-  background-color: #77b300;
-  color: #000000;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../img/1.jpg");
+  background-size: cover;
 }
 
 .thumbnail {

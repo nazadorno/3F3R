@@ -1,26 +1,17 @@
 body {    
   font-family: 'Crimson Text', serif;
-  background-image: url("../img/recycling.jpg");
-  background-size: cover; 
 }
   
-.container transbox {  
+.container contacto {  
   padding: 40px 80px;  
 }
   
 .jumbotron {
-  background-color: #77b300;
-  color: #000000;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../img/1.jpg");
+  background-size: cover;
 }
   
-.transbox {
-  background-color: #fffffffa;
-  opacity: 0.8;
-}
-  
-.transbox p {
-  font-weight: bold;
-  color: #000000;
-}
-  
+
+
   
