@@ -159,6 +159,7 @@ header.masthead .bg-circle-4 {
   border-style: solid;
   background-color: lawngreen;
   border-color: lawngreen;
+  border-radius: 11%;
 }    
 
 #myMap {
