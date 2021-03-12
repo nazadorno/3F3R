@@ -10,46 +10,63 @@
     crossorigin="">
 }
 
-<div class="jumbotron text-center">
-  <h1>PUESTOS DE RECICLADO</h1>
-  <h5>ENCONTRÁ EL PUNTO MÁS CERCANO</h5>
-</div>
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">Puestos de reciclado</h1>
+        <h2 class="masthead-subheading mb-0">#3F3R</h2>
+        <a href="@Url.Action("Materiales","Home")" class="btn btn-primary btn-xl rounded-pill mt-5">Materiales reciclables</a>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">            
+             <div id="myMap"></div>            
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h5 class="display-4">DÍAS Y HORARIOS DE ATENCIÓN</h5>
+            <h5><i class="far fa-calendar-alt"></i> Lunes y martes</h5>
+            <h5><i class="far fa-clock"></i>  15 a 19 hs.</h5><br>
+            <h5><i class="far fa-calendar-alt"></i>  Miércoles a domingo</h5>
+            <h5><i class="far fa-clock"></i>  11 a 19 hs.</h5><br>
+            <h5><i class="far fa-eye"></i>  Al lado de cada puesto vas a encontrar una campana contenedora, 
+            ADENTRO podés dejar tus residuos reciclables sueltos o el bolsas pequeñas, durante las 24 hs.</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
-<div class="container puestos"> 
+
       
-  <div class="row">
-          
-   <div class="col-sm-12 col-md-4">
-      <div id="horarios">
-        <h4>DÍAS Y HORARIOS DE ATENCIÓN</h4>
-        <h4><i class="far fa-calendar-alt"></i>  Miércoles a domingo.</h4>
-        <h4><i class="far fa-clock"></i>  11 a 15 hs.</h4>
-        <h5><i class="far fa-eye"></i>  Al lado de cada puesto vas a encontrar una campana contenedora, 
-        adentro podés dejar tus residuos reciclables en bolsas chicas o sueltos,
-        durante las 24 hs.</h5>
+  <div class="row">      
+        
 
   
-      <div class="atencion">
-         <h5><i class="fas fa-exclamation-triangle"></i><br>
-         ¡POR FAVOR NO DEJAR RECICLABLES FUERA DEL HORARIO DE ATENCIÓN!<br> 
-         Al quedar a la intemperie las bolsas se pueden romper, los materiales se dispersan y se contaminan,
-         perdiendo su potencial para ser reciclados y ensuciando las plazas.</h5>
-      </div>
+    <div class="atencion">
+      <h5><i class="fas fa-exclamation-triangle"></i><br>
+      ¡POR FAVOR NO DEJAR RECICLABLES FUERA DEL HORARIO DE ATENCIÓN!<br> 
+      Al quedar a la intemperie las bolsas se pueden romper, los materiales se dispersan y se contaminan,
+      perdiendo su potencial para ser reciclados y ensuciando las plazas.</h5>
+    </div>
          
         
-      </div>            
-   </div>
-
-    <div class="col-sm-12 col-md-8">
-      <div id="myMap"></div>
-    </div>
-
+            
   </div>
 
-  <div class="col-sm-12 col-md-12">
-    <br>
-    <img class="imgpuestos" src="~/img/puestos.jpg" />
-  </div>
+   
+
+  
 
   
 

@@ -2,40 +2,53 @@
   <link rel="stylesheet" href="~/css/contacto.css" />
 }
 
-<div class="jumbotron text-center">
-  <h1>CONTACTO</h1>
-  <h5>DEJANOS TUS DATOS PARA COORDINAR UNA ACTIVIDAD DE CONCIENTIZACIÓN</h5>
-</div>
-  
-<div class="container contacto"> 
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0">Contacto</h1>
+        <h2 class="masthead-subheading mb-0">#3F3R</h2>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+<section style="padding-top: 50px">
+  <div class="container" > 
       
-  <form method="POST" action="@Url.Action("EnviarContacto", "Home")">
-    <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input name="nombre" type="text" class="form-control form-control-lg" name="para" id="nombre" placeholder="Ingresá tu nombre..." required>
-    </div>
+    <form method="POST" action="@Url.Action("EnviarContacto", "Home")">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" type="text" class="form-control form-control-lg" name="para" id="nombre" placeholder="Ingresá tu nombre..." required>
+      </div>
     
-    <div class="form-group">
-      <label for="mail">Mail</label>
-      <input name="mail" type="email" class="form-control" id="mail" placeholder="mail@ejemplo.com" required>
-    </div>
+      <div class="form-group">
+        <label for="mail">Mail</label>
+        <input name="mail" type="email" class="form-control" id="mail" placeholder="mail@ejemplo.com" required>
+      </div>
 
-    <div class="form-group">
-      <label for="establecimiento">Establecimiento</label>
-      <input name="establecimiento" type="text" class="form-control" id="establecimiento" required>
-    </div>
+      <div class="form-group">
+        <label for="establecimiento">Establecimiento</label>
+        <input name="establecimiento" type="text" class="form-control" id="establecimiento" required>
+      </div>
 
-    <div class="form-group">
-      <label for="curso">Curso / Año</label>
-      <input name="curso" type="text" class="form-control" id="curso" required>
-    </div>
+      <div class="form-group">
+        <label for="curso">Curso / Año</label>
+        <input name="curso" type="text" class="form-control" id="curso" required>
+      </div>
     
-    <div class="form-group">
-      <label for="consulta">Comentario:</label>
-      <textarea name="consulta" class="form-control" id="consulta" rows="5"></textarea>
-    </div>
+      <div class="form-group">
+        <label for="consulta">Comentario:</label>
+        <textarea name="consulta" class="form-control" id="consulta" rows="5"></textarea>
+      </div>
     
-    <button type="submit" class="btn btn-dark">Enviar</button>
-  </form>
+      <button type="submit" class="btn btn-dark">Enviar</button>
+    </form>
  
-</div>   
+  </div>   
+
+
+</section>
+  

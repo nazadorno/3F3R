@@ -2,17 +2,20 @@
   <link rel="stylesheet" href="~/css/consultaenviada.css" />
 }
 
-<div class ="container cenv">
-
-  <div class="card" style="width: 18rem;">
-      <img src="~/img/logo.jpg" class="card-img-top" alt="logo">
-        <div class="card-body">
-          <h5 class="card-title">¡Gracias @ViewBag.Nombre por contactarte con nosotros!</h5>
-          <p class="card-text">Nos estaremos comunicando a la siguiente dirección de mail: @ViewBag.mail.</p>
-          <a href="@Url.Action("Index","Home")" class="btn btn-primary">Volver a Inicio</a>
-        </div>
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h5 class="masthead-heading mb-0">¡Gracias @ViewBag.Nombre por tu comentario!</h5>
+        <p class="masthead-subheading mb-0">Nos estaremos comunicando a la siguiente dirección de mail: @ViewBag.mail</p>
+        <a href="@Url.Action("Index","Home")" class="btn btn-primary btn-xl rounded-pill mt-5">Volver al inicio</a>
+      </div>
     </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
 
-</div>
+
 
 

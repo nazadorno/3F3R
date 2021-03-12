@@ -1,5 +1,5 @@
 body {    
-  font-family: 'Crimson Text', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar {
@@ -7,7 +7,7 @@ body {
   border: 0 !important;
   margin: 0 !important;
   font-size: 15px !important;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   opacity: 0.9;
   padding-left: 80px;
 }
