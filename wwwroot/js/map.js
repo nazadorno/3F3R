@@ -1,6 +1,6 @@
 $(document).ready(function(){  
 
-  var myMap = L.map('myMap').setView([-34.603792, -58.562181], 12)
+  var myMap = L.map('myMap').setView([-34.603792, -58.562181], 13)
 
   L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, { 
    maxZoom: 18,
