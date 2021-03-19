@@ -25,7 +25,17 @@ namespace _3F3R
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.Name = "._3F3R.Session";
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            
+            });         
+
             services.AddControllersWithViews()
             .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
@@ -54,6 +64,8 @@ namespace _3F3R
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
