@@ -30,7 +30,7 @@ namespace _3F3R
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(10);
-                options.Cookie.Name = "._3F3R.Session";
+                options.Cookie.Name = ".3F3R.Session";
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             

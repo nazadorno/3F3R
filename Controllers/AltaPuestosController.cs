@@ -23,11 +23,54 @@ namespace AltaPuestos.Controllers
             this.db = contexto;
         }
 
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public IActionResult LogIn(string mail, string nombre){
+            Usuario nuevoUsuario = db.Usuarios.FirstOrDefault(n => n.Mail == mail);
+            if(nuevoUsuario != null){
+                if(nuevoUsuario.Nombre == nombre){
+                    //AgregarUsuarioASession(nuevoUsuario);
+                    return RedirectToAction("Editar");
+                }else{
+                    ViewBag.badLogin = true;
+                    return View("LogIn");
+                }
+            }else{
+                ViewBag.badLogin = true;
+                return View("LogIn");
+            }
+        }
+
+        //public JsonResult AgregarUsuarioASession(Usuario nuevoUsuario)
+        //{
+        //    HttpContext.Session.Set<Usuario>("UsuarioLogueado", nuevoUsuario);
+//            return Json(nuevoUsuario);
+        //}
+
+        //public IActionResult Salir(){
+        //    HttpContext.Session.Remove("UsuarioLogueado");
+        //    return RedirectToAction("LogIn") ;
+        //}
+       
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+
         public JsonResult ConsultarPuestos()
         {
             return Json(db.Puestos.ToList());
         }
-
         public IActionResult Editar()
         {
             ViewBag.verPuestos = db.Puestos.ToList();            
