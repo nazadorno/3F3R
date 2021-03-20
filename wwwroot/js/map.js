@@ -1,12 +1,12 @@
 $(document).ready(function(){  
 
-  var myMap = L.map('myMap').setView([-34.603792, -58.562181], 13)
+  var myMap = L.map('myMap').setView([-34.609440, -58.578713], 13)
 
   L.tileLayer(`https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`, { 
    maxZoom: 18,
   }).addTo(myMap);
 
-  var marker = L.marker([-34.603792, -58.562181]).addTo(myMap);
+  var marker = L.marker([-34.603792, -58.562181]).addTo(myMap); 
 
   var searchControl = L.esri.Geocoding.geosearch().addTo(myMap);
 
