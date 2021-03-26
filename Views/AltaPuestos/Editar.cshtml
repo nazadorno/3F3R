@@ -62,17 +62,19 @@
 <form method="POST" action="@Url.Action("Agregar", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp">
+    <input type="text" class="form-control" name="cp" required>
+
     <label for="titulo">Latitud</label>
-    <input type="text" class="form-control" name="latitud">
+    <input type="text" class="form-control" name="latitud" required>
     <label for="titulo">Longitud</label>
-    <input type="text" class="form-control" name="longitud">
+    <input type="text" class="form-control" name="longitud" required>
+    
     <label for="titulo">Localidad</label>
-    <input type="text" class="form-control" name="localidad">
+    <input type="text" class="form-control" name="localidad" required>
     <label for="titulo">Plaza</label>
-    <input type="text" class="form-control" name="plaza">
+    <input type="text" class="form-control" name="plaza" required>
     <label for="titulo">Dirección</label>
-    <input type="text" class="form-control" name="direccion">
+    <input type="text" class="form-control" name="direccion" required>
   </div>
           
   <button type="submit" class="btn btn-dark">Guardar</button>
@@ -86,10 +88,12 @@
   <div class="form-group">
     <label for="titulo">CP</label>
     <input type="text" class="form-control" name="cp">
-    <label for="titulo">Latitud</label>
-    <input type="text" class="form-control" name="latitud">
-    <label for="titulo">Longitud</label>
-    <input type="text" class="form-control" name="longitud">
+    <label for="titulo">Localidad</label>
+    <input type="text" class="form-control" name="localidad">
+    <label for="titulo">Plaza</label>
+    <input type="text" class="form-control" name="plaza">
+    <label for="titulo">Direccion</label>
+    <input type="text" class="form-control" name="direccion">
   </div>
           
   <button type="submit" class="btn btn-dark">Editar</button>

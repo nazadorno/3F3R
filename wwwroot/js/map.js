@@ -6,18 +6,18 @@ $(document).ready(function(){
    maxZoom: 18,
   }).addTo(myMap);
 
-  var marker = L.marker([-34.603792, -58.562181]).addTo(myMap); 
+  var marker = L.marker([-34.603792, -58.562181]).addTo(myMap);
 
   var searchControl = L.esri.Geocoding.geosearch().addTo(myMap);
 
-  var results = L.layerGroup().addTo(myMap);
-
+  var results = L.layerGroup().addTo(myMap); 
+  
   searchControl.on('results', function (data) {
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {
       myMap.setView(data.results[i].latlng, 14);
       $.ajax({
-        url: '/AltaPuestos/ZonaConsultada',
+        url: '/AltaPuestos/Agregar',
         method: 'POST',
         dataType: "json",
         data: {
@@ -34,6 +34,17 @@ $(document).ready(function(){
       });
     }
   });
+
+  var popup = L.popup();
+
+  function onMapClick(e) {
+      popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(myMap);
+  }
+
+  myMap.on('click', onMapClick);
 
     
   $.ajax({

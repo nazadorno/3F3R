@@ -50,7 +50,7 @@ namespace AltaPuestos.Controllers
         //public JsonResult AgregarUsuarioASession(Usuario nuevoUsuario)
         //{
         //    HttpContext.Session.Set<Usuario>("UsuarioLogueado", nuevoUsuario);
-//            return Json(nuevoUsuario);
+        //    return Json(nuevoUsuario);
         //}
 
         //public IActionResult Salir(){
@@ -101,11 +101,12 @@ namespace AltaPuestos.Controllers
         }
 
         [HttpPost]
-        public IActionResult DoEdit(int CP, double latitud, double longitud)
+        public IActionResult DoEdit(int CP, string localidad, string plaza, string direccion)
         {
             Puesto puesto = db.Puestos.FirstOrDefault(n => n.CP == CP);
-            puesto.Latitud = latitud;
-            puesto.Longitud = longitud;
+            puesto.Localidad = localidad;
+            puesto.Plaza = plaza;
+            puesto.Direccion = direccion;
 
             db.Puestos.Update(puesto);
             db.SaveChanges();
