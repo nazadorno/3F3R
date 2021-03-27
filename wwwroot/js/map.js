@@ -11,40 +11,40 @@ $(document).ready(function(){
   var searchControl = L.esri.Geocoding.geosearch().addTo(myMap);
 
   var results = L.layerGroup().addTo(myMap); 
-  
-  searchControl.on('results', function (data) {
-    results.clearLayers();
-    for (var i = data.results.length - 1; i >= 0; i--) {
-      myMap.setView(data.results[i].latlng, 14);
-      $.ajax({
-        url: '/AltaPuestos/Agregar',
-        method: 'POST',
-        dataType: "json",
-        data: {
-          latitud: data.results[i].latlng.lat,
-          longitud: data.results[i].latlng.lng
-        },
-        success: (data) => {
-          console.log(data);
-        },
 
-        failure: function(error){
-          console.log(error);
+
+  $('#busqueda').on('click', function() {
+    
+    searchControl.on('results', function (data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+          myMap.setView(data.results[i].latlng, 14);
+          
+          $('#lat').val(data.results[i].latlng.lat)
+          $('#lon').val(data.results[i].latlng.lng)
+        
         }
-      });
-    }
-  });
+    });
+  });   
+  
+  
+  $('#seleccion').on('click', function() {
 
-  var popup = L.popup();
+    myMap.on('click', onMapClick);
+    var popup = L.popup();
 
-  function onMapClick(e) {
-      popup
-          .setLatLng(e.latlng)
-          .setContent("You clicked the map at " + e.latlng.toString())
-          .openOn(myMap);
-  }
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(myMap);
 
-  myMap.on('click', onMapClick);
+            $('#lat').val(e.latlng.lat)
+            $('#lon').val(e.latlng.lng)    
+        
+    }           
+
+  });              
 
     
   $.ajax({
