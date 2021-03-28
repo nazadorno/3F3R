@@ -62,24 +62,24 @@
 <form method="POST" action="@Url.Action("Agregar", "AltaPuestos")" id="myform">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp" required>
+    <input type="text" class="form-control" name="cp" required><br>
 
 
-    <label for="titulo">Ubicación</label><br><br>
-    <button type="button" class="btn btn-outline-info" id="seleccion">Seleccionar en el mapa</button>
-    <button type="button" class="btn btn-outline-info" id="busqueda">Buscar por dirección</button><br><br>
+    <label for="titulo">Ubicación</label><br>
+    <button type="button" class="btn btn-outline-info" id="busqueda">Buscar dirección</button>
+    <button type="button" class="btn btn-outline-info" id="seleccion">Seleccionar punto</button><br><br>
 
     <label for="titulo">Latitud</label>
-    <input type="text" class="form-control" name="latitud" id="lat" required>
+    <input type="text" class="form-control" name="latitud" id="lat" required><br>
     <label for="titulo">Longitud</label>
-    <input type="text" class="form-control" name="longitud" id="lon" required>
+    <input type="text" class="form-control" name="longitud" id="lon" required><br>
     
     <label for="titulo">Localidad</label>
-    <input type="text" class="form-control" name="localidad" required>
+    <input type="text" class="form-control" name="localidad" required><br>
     <label for="titulo">Plaza</label>
-    <input type="text" class="form-control" name="plaza" required>
+    <input type="text" class="form-control" name="plaza" required><br>
     <label for="titulo">Dirección</label>
-    <input type="text" class="form-control" name="direccion" required>
+    <input type="text" class="form-control" name="direccion" required><br>
   </div>
           
   <button type="submit" class="btn btn-dark">Guardar</button>
@@ -92,13 +92,13 @@
 <form method="POST" action="@Url.Action("DoEdit", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp">
+    <input type="text" class="form-control" name="cp"><br>
     <label for="titulo">Localidad</label>
-    <input type="text" class="form-control" name="localidad">
+    <input type="text" class="form-control" name="localidad"><br>
     <label for="titulo">Plaza</label>
-    <input type="text" class="form-control" name="plaza">
+    <input type="text" class="form-control" name="plaza"><br>
     <label for="titulo">Direccion</label>
-    <input type="text" class="form-control" name="direccion">
+    <input type="text" class="form-control" name="direccion"><br>
   </div>
           
   <button type="submit" class="btn btn-dark">Editar</button>
@@ -111,7 +111,7 @@
 <form method="POST" action="@Url.Action("Eliminar", "AltaPuestos")">
   <div class="form-group">
     <label for="titulo">CP</label>
-    <input type="text" class="form-control" name="cp">
+    <input type="text" class="form-control" name="cp"><br>
   </div>
           
   <button type="submit" class="btn btn-dark">Eliminar</button>

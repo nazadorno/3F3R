@@ -20,8 +20,15 @@ $(document).ready(function(){
         for (var i = data.results.length - 1; i >= 0; i--) {
           myMap.setView(data.results[i].latlng, 14);
           
-          $('#lat').val(data.results[i].latlng.lat)
-          $('#lon').val(data.results[i].latlng.lng)
+          var lat = data.results[i].latlng.lat.toString();
+          var newLat = lat.replace('.', ',');
+
+          var lon = data.results[i].latlng.lng.toString();
+          var newLon = lon.replace('.', ',');
+
+
+          $('#lat').val(newLat)
+          $('#lon').val(newLon)
         
         }
     });
@@ -36,11 +43,17 @@ $(document).ready(function(){
     function onMapClick(e) {
         popup
             .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
+            .setContent("Coordenadas " + e.latlng.toString())
             .openOn(myMap);
 
-            $('#lat').val(e.latlng.lat)
-            $('#lon').val(e.latlng.lng)    
+            var lat = e.latlng.lat.toString();
+            var newLat = lat.replace('.', ',');
+
+            var lon = e.latlng.lng.toString();
+            var newLon = lon.replace('.', ',');
+
+            $('#lat').val(newLat)
+            $('#lon').val(newLon)   
         
     }           
 
